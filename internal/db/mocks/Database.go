@@ -31,6 +31,24 @@ func (_m *Database) Close() error {
 	return r0
 }
 
+// CreateAdmin provides a mock function with given fields: admin
+func (_m *Database) CreateAdmin(admin *models.Admin) error {
+	ret := _m.Called(admin)
+
+	if len(ret) == 0 {
+		panic("no return value specified for CreateAdmin")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(*models.Admin) error); ok {
+		r0 = rf(admin)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
 // CreateEmployee provides a mock function with given fields: emp
 func (_m *Database) CreateEmployee(emp *models.Employee) error {
 	ret := _m.Called(emp)
@@ -42,6 +60,24 @@ func (_m *Database) CreateEmployee(emp *models.Employee) error {
 	var r0 error
 	if rf, ok := ret.Get(0).(func(*models.Employee) error); ok {
 		r0 = rf(emp)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// DeleteAdmin provides a mock function with given fields: email
+func (_m *Database) DeleteAdmin(email string) error {
+	ret := _m.Called(email)
+
+	if len(ret) == 0 {
+		panic("no return value specified for DeleteAdmin")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(string) error); ok {
+		r0 = rf(email)
 	} else {
 		r0 = ret.Error(0)
 	}
@@ -65,6 +101,66 @@ func (_m *Database) DeleteEmployee(id string) error {
 	}
 
 	return r0
+}
+
+// GetAdmin provides a mock function with given fields: email
+func (_m *Database) GetAdmin(email string) (*models.Admin, error) {
+	ret := _m.Called(email)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetAdmin")
+	}
+
+	var r0 *models.Admin
+	var r1 error
+	if rf, ok := ret.Get(0).(func(string) (*models.Admin, error)); ok {
+		return rf(email)
+	}
+	if rf, ok := ret.Get(0).(func(string) *models.Admin); ok {
+		r0 = rf(email)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*models.Admin)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(string) error); ok {
+		r1 = rf(email)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// GetAdminByEmail provides a mock function with given fields: email
+func (_m *Database) GetAdminByEmail(email string) (*models.Admin, error) {
+	ret := _m.Called(email)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetAdminByEmail")
+	}
+
+	var r0 *models.Admin
+	var r1 error
+	if rf, ok := ret.Get(0).(func(string) (*models.Admin, error)); ok {
+		return rf(email)
+	}
+	if rf, ok := ret.Get(0).(func(string) *models.Admin); ok {
+		r0 = rf(email)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*models.Admin)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(string) error); ok {
+		r1 = rf(email)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
 }
 
 // GetEmployee provides a mock function with given fields: id
@@ -95,6 +191,24 @@ func (_m *Database) GetEmployee(id string) (*models.Employee, error) {
 	}
 
 	return r0, r1
+}
+
+// UpdateAdmin provides a mock function with given fields: admin
+func (_m *Database) UpdateAdmin(admin *models.Admin) error {
+	ret := _m.Called(admin)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateAdmin")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(*models.Admin) error); ok {
+		r0 = rf(admin)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
 }
 
 // UpdateEmployee provides a mock function with given fields: emp
