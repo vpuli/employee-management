@@ -59,6 +59,19 @@ func (p *PostgresDB) DeleteEmployee(id string) error {
 	return p.db.Delete(&models.Employee{}, "id = ?", id).Error
 }
 
+func (p *PostgresDB) GetMaxEmployeeID() (string, error) {
+	var result struct {
+		MaxID string
+	}
+
+	err := p.db.Raw("SELECT COALESCE(MAX(id), '0') as max_id FROM employees").Scan(&result).Error
+	if err != nil {
+		return "", err
+	}
+
+	return result.MaxID, nil
+}
+
 func (p *PostgresDB) Close() error {
 	sqlDB, err := p.db.DB()
 	if err != nil {

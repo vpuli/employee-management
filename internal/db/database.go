@@ -8,5 +8,6 @@ type Database interface {
 	GetEmployee(id string) (*models.Employee, error)
 	UpdateEmployee(emp *models.Employee) error
 	DeleteEmployee(id string) error
+	GetMaxEmployeeID() (string, error)
 	Close() error
 }
