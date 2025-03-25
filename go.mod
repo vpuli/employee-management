@@ -3,7 +3,7 @@ module employees
 go 1.24.1
 
 require (
-	github.com/gorilla/mux v1.8.1
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/stretchr/testify v1.10.0
 	go.uber.org/zap v1.27.0
 	gorm.io/driver/postgres v1.5.11

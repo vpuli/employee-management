@@ -8,6 +8,10 @@ type Database interface {
 	GetEmployee(id string) (*models.Employee, error)
 	UpdateEmployee(emp *models.Employee) error
 	DeleteEmployee(id string) error
-	GetMaxEmployeeID() (string, error)
+	CreateAdmin(admin *models.Admin) error
+	GetAdmin(email string) (*models.Admin, error)
+	GetAdminByEmail(email string) (*models.Admin, error)
+	UpdateAdmin(admin *models.Admin) error
+	DeleteAdmin(email string) error
 	Close() error
 }

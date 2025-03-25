@@ -36,6 +36,10 @@ func NewPostgresDB(config Config) (*PostgresDB, error) {
 		return nil, fmt.Errorf("failed to migrate database: %v", err)
 	}
 
+	if err := db.AutoMigrate(&models.Admin{}); err != nil {
+		return nil, fmt.Errorf("failed to migrate database: %w", err)
+	}
+
 	return &PostgresDB{db: db}, nil
 }
 
@@ -59,17 +63,32 @@ func (p *PostgresDB) DeleteEmployee(id string) error {
 	return p.db.Delete(&models.Employee{}, "id = ?", id).Error
 }
 
-func (p *PostgresDB) GetMaxEmployeeID() (string, error) {
-	var result struct {
-		MaxID string
-	}
+func (p *PostgresDB) CreateAdmin(admin *models.Admin) error {
+	return p.db.Create(admin).Error
+}
 
-	err := p.db.Raw("SELECT COALESCE(MAX(id), '0') as max_id FROM employees").Scan(&result).Error
-	if err != nil {
-		return "", err
+func (p *PostgresDB) GetAdmin(email string) (*models.Admin, error) {
+	var admin models.Admin
+	if err := p.db.First(&admin, "email = ?", email).Error; err != nil {
+		return nil, err
 	}
+	return &admin, nil
+}
 
-	return result.MaxID, nil
+func (p *PostgresDB) UpdateAdmin(admin *models.Admin) error {
+	return p.db.Save(admin).Error
+}
+
+func (p *PostgresDB) DeleteAdmin(email string) error {
+	return p.db.Delete(&models.Admin{}, "email = ?", email).Error
+}
+
+func (p *PostgresDB) GetAdminByEmail(email string) (*models.Admin, error) {
+	var admin models.Admin
+	if err := p.db.Where("email = ?", email).First(&admin).Error; err != nil {
+		return nil, err
+	}
+	return &admin, nil
 }
 
 func (p *PostgresDB) Close() error {

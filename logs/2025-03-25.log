@@ -1,0 +1,47 @@
+{"level":"fatal","timestamp":"2025-03-25T12:08:39.811-0400","msg":"Failed to connect to database","error":"failed to migrate database: ERROR: column \"address\" of relation \"employees\" contains null values (SQLSTATE 23502)"}
+{"level":"error","timestamp":"2025-03-25T12:16:26.222-0400","msg":"Admin creation failed","error":"ERROR: relation \"admins\" does not exist (SQLSTATE 42P01)"}
+{"level":"error","timestamp":"2025-03-25T12:24:08.224-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"error","timestamp":"2025-03-25T12:25:19.703-0400","msg":"Admin creation failed","error":"ERROR: null value in column \"id\" of relation \"admins\" violates not-null constraint (SQLSTATE 23502)"}
+{"level":"error","timestamp":"2025-03-25T12:43:21.959-0400","msg":"Employee creation failed","error":"ERROR: null value in column \"id\" of relation \"employees\" violates not-null constraint (SQLSTATE 23502)"}
+{"level":"info","timestamp":"2025-03-25T12:44:55.083-0400","msg":"Employee created","employee":{"id":1,"firstName":"John","lastName":"Doe","email":"john.doe@example.com","address":"","createdAt":"2025-03-25T12:44:55.081135-04:00","updatedAt":"2025-03-25T12:44:55.081135-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:45:06.742-0400","msg":"Employee retrieved","employee":{"id":1,"firstName":"John","lastName":"Doe","email":"john.doe@example.com","address":"","createdAt":"2025-03-25T12:44:55.081135-04:00","updatedAt":"2025-03-25T12:44:55.081135-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:45:27.191-0400","msg":"Employee created","employee":{"id":2,"firstName":"Frank","lastName":"Ocean","email":"frank.ocean@example.com","address":"","createdAt":"2025-03-25T12:45:27.190425-04:00","updatedAt":"2025-03-25T12:45:27.190425-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:45:29.414-0400","msg":"Employee retrieved","employee":{"id":2,"firstName":"Frank","lastName":"Ocean","email":"frank.ocean@example.com","address":"","createdAt":"2025-03-25T12:45:27.190425-04:00","updatedAt":"2025-03-25T12:45:27.190425-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:46:08.692-0400","msg":"Employee updated","employee":{"id":2,"firstName":"Bill","lastName":"Burr","email":"bill.burr@example.com","address":"familia","createdAt":"0001-01-01T00:00:00Z","updatedAt":"2025-03-25T12:46:08.69131-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:46:10.930-0400","msg":"Employee retrieved","employee":{"id":2,"firstName":"Bill","lastName":"Burr","email":"bill.burr@example.com","address":"familia","createdAt":"0000-12-31T19:03:58-04:56","updatedAt":"2025-03-25T12:46:08.69131-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:46:20.020-0400","msg":"Employee deleted","employeeId":"1"}
+{"level":"error","timestamp":"2025-03-25T12:46:22.908-0400","msg":"Employee not found","error":"record not found"}
+{"level":"info","timestamp":"2025-03-25T12:46:35.776-0400","msg":"Employee created","employee":{"id":3,"firstName":"Jean","lastName":"John","email":"jjocean@example.com","address":"","createdAt":"2025-03-25T12:46:35.77542-04:00","updatedAt":"2025-03-25T12:46:35.77542-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:46:39.630-0400","msg":"Employee retrieved","employee":{"id":3,"firstName":"Jean","lastName":"John","email":"jjocean@example.com","address":"","createdAt":"2025-03-25T12:46:35.77542-04:00","updatedAt":"2025-03-25T12:46:35.77542-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:47:10.229-0400","msg":"Admin created","admin":{"id":1,"email":"admin@example.com","password":"$2a$10$kykKiij1uctoSyDSBisHeOgF9oM5TRM4rLlhS/OF/dY6jOFPfsp1m","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T12:47:10.225146-04:00"}}
+{"level":"error","timestamp":"2025-03-25T12:47:13.237-0400","msg":"Email is required"}
+{"level":"info","timestamp":"2025-03-25T12:47:42.727-0400","msg":"Admin retrieved","admin":{"id":1,"email":"admin@example.com","password":"$2a$10$kykKiij1uctoSyDSBisHeOgF9oM5TRM4rLlhS/OF/dY6jOFPfsp1m","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T12:47:10.225146-04:00"}}
+{"level":"error","timestamp":"2025-03-25T12:47:54.368-0400","msg":"Email is required"}
+{"level":"error","timestamp":"2025-03-25T12:47:59.751-0400","msg":"Invalid request body","error":"invalid character '\\\\' looking for beginning of object key string"}
+{"level":"error","timestamp":"2025-03-25T12:48:13.879-0400","msg":"Admin update failed","error":"ERROR: duplicate key value violates unique constraint \"idx_admins_email\" (SQLSTATE 23505)"}
+{"level":"error","timestamp":"2025-03-25T12:48:55.347-0400","msg":"Admin update failed","error":"ERROR: duplicate key value violates unique constraint \"idx_admins_email\" (SQLSTATE 23505)"}
+{"level":"info","timestamp":"2025-03-25T12:51:46.826-0400","msg":"Admin retrieved","admin":{"id":1,"email":"admin@example.com","password":"$2a$10$kykKiij1uctoSyDSBisHeOgF9oM5TRM4rLlhS/OF/dY6jOFPfsp1m","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T12:47:10.225146-04:00"}}
+{"level":"error","timestamp":"2025-03-25T12:51:54.261-0400","msg":"Email is required"}
+{"level":"info","timestamp":"2025-03-25T12:52:09.102-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T12:52:09.104-0400","msg":"Admin update failed","error":"ERROR: duplicate key value violates unique constraint \"idx_admins_email\" (SQLSTATE 23505)"}
+{"level":"info","timestamp":"2025-03-25T12:59:00.735-0400","msg":"Admin retrieved","admin":{"id":1,"email":"admin@example.com","password":"$2a$10$kykKiij1uctoSyDSBisHeOgF9oM5TRM4rLlhS/OF/dY6jOFPfsp1m","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T12:47:10.225146-04:00"}}
+{"level":"info","timestamp":"2025-03-25T12:59:24.618-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T12:59:24.618-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:00:41.715-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:00:41.716-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:03:33.735-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:03:33.735-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:04:55.928-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:04:55.929-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:05:09.882-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:05:09.882-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:05:13.570-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:05:13.570-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:05:17.522-0400","msg":"Admin update","email":"admin@example.com"}
+{"level":"error","timestamp":"2025-03-25T13:05:17.522-0400","msg":"Invalid request body","error":"EOF"}
+{"level":"info","timestamp":"2025-03-25T13:08:45.223-0400","msg":"Admin retrieved","admin":{"id":1,"email":"admin@example.com","password":"$2a$10$kykKiij1uctoSyDSBisHeOgF9oM5TRM4rLlhS/OF/dY6jOFPfsp1m","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T12:47:10.225146-04:00"}}
+{"level":"info","timestamp":"2025-03-25T13:08:51.862-0400","msg":"Admin updated","admin":{"id":1,"email":"admin@example.com","password":"newpas33os","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T13:08:51.859487-04:00"}}
+{"level":"info","timestamp":"2025-03-25T13:08:55.760-0400","msg":"Admin retrieved","admin":{"id":1,"email":"admin@example.com","password":"newpas33os","createdAt":"2025-03-25T12:47:10.225146-04:00","updatedAt":"2025-03-25T13:08:51.859487-04:00"}}
+{"level":"info","timestamp":"2025-03-25T13:15:26.458-0400","msg":"Employee created","employee":{"id":4,"firstName":"Emily","lastName":"Paris","email":"emily.paris@example.com","address":"","createdAt":"2025-03-25T13:15:26.456592-04:00","updatedAt":"2025-03-25T13:15:26.456592-04:00"}}
+{"level":"error","timestamp":"2025-03-25T13:16:59.088-0400","msg":"Employee creation failed","error":"ERROR: duplicate key value violates unique constraint \"idx_employees_email\" (SQLSTATE 23505)"}
+{"level":"info","timestamp":"2025-03-25T13:17:09.777-0400","msg":"Employee retrieved","employee":{"id":4,"firstName":"Emily","lastName":"Paris","email":"emily.paris@example.com","address":"","createdAt":"2025-03-25T13:15:26.456592-04:00","updatedAt":"2025-03-25T13:15:26.456592-04:00"}}
